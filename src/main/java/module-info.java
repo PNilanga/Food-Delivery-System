@@ -7,6 +7,7 @@ module com.example.food_delivery_system {
     requires com.dlsc.formsfx;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens com.example.food_delivery_system to javafx.fxml;
     exports com.example.food_delivery_system;
