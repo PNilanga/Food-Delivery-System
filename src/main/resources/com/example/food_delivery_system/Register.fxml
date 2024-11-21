@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="276.0" prefWidth="286.0" spacing="10" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.RegisterController">
+    <Label text="Register">
+      <font>
+         <Font name="Calibri Bold" size="18.0" />
+      </font></Label>
+   <Pane prefHeight="171.0" prefWidth="274.0">
+      <children>
+          <Button layoutX="200.0" layoutY="113.0" onAction="#handleRegister" text="Register" />
+          <Button layoutX="5.0" layoutY="138.0" onAction="#goBackToLogin" text="Back to Login" />
+          <PasswordField fx:id="passwordField" layoutX="97.0" layoutY="76.0" prefHeight="25.0" prefWidth="163.0" promptText="Enter Password" />
+          <TextField fx:id="usernameField" layoutX="97.0" layoutY="34.0" prefHeight="25.0" prefWidth="163.0" promptText="Enter Username" />
+         <Label layoutX="9.0" layoutY="38.0" text="New Username" />
+         <Label layoutX="10.0" layoutY="80.0" text="New Password" />
+      </children>
+   </Pane>
+    <Label fx:id="statusLabel" textFill="RED" />
+</VBox>
