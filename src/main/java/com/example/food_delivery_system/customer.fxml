@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.CustomerController">
+
+
+    <Label text="Browse Restaurants" layoutX="50" layoutY="20" />
+    <ListView fx:id="restaurantListView" layoutX="50" layoutY="50" prefWidth="200" prefHeight="150" />
+
+    <Label text="Order Food" layoutX="50" layoutY="220" />
+    <ListView fx:id="foodListView" layoutX="50" layoutY="250" prefWidth="200" prefHeight="150" />
+    <HBox layoutX="50" layoutY="420" spacing="10">
+        <TextField fx:id="quantityField" promptText="Quantity" />
+        <Button text="Add to Cart" onAction="#handleAddToCart" />
+    </HBox>
+
+
+    <Label text="Track Order" layoutX="300" layoutY="20" />
+    <ListView fx:id="orderStatusListView" layoutX="300" layoutY="50" prefWidth="200" prefHeight="150" />
+    <ProgressBar fx:id="orderProgress" layoutX="300" layoutY="220" prefWidth="200" />
+
+    <Label text="Make Payment" layoutX="50" layoutY="480" />
+    <TextField fx:id="paymentField" promptText="Enter Payment Amount" layoutX="50" layoutY="510" prefWidth="200" />
+    <Button text="Pay Now" layoutX="50" layoutY="550" onAction="#handlePayment" />
+
+
+    <Label text="Order History" layoutX="300" layoutY="480" />
+    <Button text="View Order History" layoutX="300" layoutY="510" onAction="#handleViewOrderHistory" />
+
+    <Label text="Account Settings" layoutX="50" layoutY="580" />
+    <TextField fx:id="nameField" promptText="Name" layoutX="50" layoutY="610" prefWidth="200" />
+    <TextField fx:id="emailField" promptText="Email" layoutX="50" layoutY="640" prefWidth="200" />
+    <Button text="Update Account" layoutX="50" layoutY="670" onAction="#handleUpdateAccount" />
+
+</AnchorPane>
