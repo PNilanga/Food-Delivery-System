@@ -94,17 +94,23 @@ public class LoginRegisterController {
             // Load different dashboards based on the user's role
             switch (role.toLowerCase()) {
                 case "admin":
-                    loader = new FXMLLoader(getClass().getResource("admin_dashboard.fxml"));
+                    loader = new FXMLLoader(getClass().getResource("AdminDashboard.fxml"));
                     root = loader.load();
+
+                    // Access the AdminDashboardController to handle navigation within admin options
+                    AdminDashboardController adminController = loader.getController();
                     break;
+
                 case "customer":
                     loader = new FXMLLoader(getClass().getResource("customer_dashboard.fxml"));
                     root = loader.load();
                     break;
+
                 case "restaurant owner":
                     loader = new FXMLLoader(getClass().getResource("restaurant_dashboard.fxml"));
                     root = loader.load();
                     break;
+
                 default:
                     throw new IllegalStateException("Unexpected value: " + role);
             }
