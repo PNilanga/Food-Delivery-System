@@ -5,7 +5,6 @@ module com.example.food_delivery_system {
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
-    requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
 

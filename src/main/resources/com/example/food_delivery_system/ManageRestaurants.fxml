@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="471.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.ManageRestaurantsController">
+   <children>
+       <Label layoutX="274.0" layoutY="2.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Manage Restaurants" />
+   
+          <!-- Add Restaurant Section -->
+       <VBox layoutX="16.0" layoutY="35.0" prefHeight="129.0" prefWidth="179.0" spacing="5" style="-fx-padding: 10; -fx-border-color: black; -fx-border-width: 1;">
+           <Label text="Add Restaurant" />
+           <TextField fx:id="restaurantNameField" promptText="Enter Restaurant Name" />
+           <TextField fx:id="locationField" promptText="Enter Location" />
+           <Button onAction="#handleAddRestaurant" text="Add Restaurant" />
+       </VBox>
+   
+          <!-- Delete Restaurant Section -->
+       <VBox layoutX="239.0" layoutY="35.0" prefHeight="129.0" prefWidth="216.0" spacing="5" style="-fx-padding: 10; -fx-border-color: black; -fx-border-width: 1;">
+           <Label text="Delete Restaurant" />
+           <TextField fx:id="deleteRestaurantField" promptText="Enter Restaurant Name to Delete" />
+           <Button onAction="#handleDeleteRestaurant" text="Delete Restaurant" />
+       </VBox>
+   
+          <!-- Update Restaurant Section -->
+       <VBox layoutX="501.0" layoutY="35.0" prefHeight="129.0" prefWidth="186.0" spacing="5" style="-fx-padding: 10; -fx-border-color: black; -fx-border-width: 1;">
+           <Label text="Update Restaurant" />
+           <TextField fx:id="updateRestaurantField" promptText="Enter Restaurant Name to Update" />
+           <TextField fx:id="newLocationField" promptText="Enter New Location" />
+           <Button onAction="#handleUpdateRestaurant" text="Update Restaurant" />
+       </VBox>
+   
+          <!-- TableView Section -->
+       <TableView fx:id="restaurantsTable" layoutX="101.0" layoutY="203.0" prefHeight="200" prefWidth="500">
+           <columns>
+               <TableColumn fx:id="nameColumn" prefWidth="250" text="Name" />
+               <TableColumn fx:id="locationColumn" prefWidth="250" text="Location" />
+           </columns>
+       </TableView>
+   
+          <Label fx:id="statusLabel" layoutX="300.0" layoutY="583.0" style="-fx-text-fill: red;" />
+      <Button layoutX="601.0" layoutY="418.0" mnemonicParsing="false" onAction="#backToAdminDashboard" prefHeight="25.0" prefWidth="67.0" text="Back" />
+   </children>
+</Pane>

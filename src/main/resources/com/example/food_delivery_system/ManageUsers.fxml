@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="653.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.ManageUsersController">
+   <children>
+       <Label layoutX="325.0" layoutY="2.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Manage Users">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+       <!-- Add User Section -->
+       <VBox layoutX="59.0" layoutY="35.0" spacing="5" style="-fx-padding: 10; -fx-border-color: black; -fx-border-width: 1;">
+           <Label text="Add User" />
+           <TextField fx:id="usernameField" promptText="Enter Username" />
+           <PasswordField fx:id="passwordField" promptText="Enter Password" />
+           <ComboBox fx:id="roleComboBox" promptText="Select Role" />
+           <Button onAction="#handleAddUser" text="Add User" />
+       </VBox>
+
+       <!-- Delete User Section -->
+       <VBox layoutX="534.0" layoutY="35.0" prefHeight="159.0" prefWidth="194.0" spacing="5" style="-fx-padding: 10; -fx-border-color: black; -fx-border-width: 1;">
+           <Label text="Delete User" />
+           <TextField fx:id="deleteUsernameField" promptText="Enter Username to Delete" />
+           <Button onAction="#handleDeleteUser" text="Delete User" />
+       </VBox>
+
+       <!-- Update User Section -->
+       <VBox layoutX="293.0" layoutY="35.0" spacing="5" style="-fx-padding: 10; -fx-border-color: black; -fx-border-width: 1;">
+           <Label text="Update User" />
+           <TextField fx:id="updateUsernameField" promptText="Enter Username to Update" />
+           <PasswordField fx:id="newPasswordField" promptText="Enter New Password" />
+           <ComboBox fx:id="newRoleComboBox" promptText="Select New Role" />
+           <Button onAction="#handleUpdateUser" text="Update User" />
+       </VBox>
+
+       <!-- Show Users Button -->
+       <Button layoutX="41.0" layoutY="562.0" onAction="#showUsersTable" style="-fx-font-size: 14px; -fx-padding: 10;" text="Show Users" />
+       <Button layoutX="647.0" layoutY="570.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="25.0" prefWidth="101.0" text="Back" />
+
+       <!-- Users Table -->
+       <TableView fx:id="usersTable" layoutX="131.0" layoutY="226.0" prefHeight="300.0" prefWidth="506.0">
+           <columns>
+               <TableColumn fx:id="usernameColumn" prefWidth="200.0" text="Username" />
+               <TableColumn fx:id="roleColumn" prefWidth="200.0" text="Role" />
+           </columns>
+       </TableView>
+
+       <Label fx:id="statusLabel" layoutX="244.0" layoutY="621.0" style="-fx-text-fill: red;" />
+   </children>
+</Pane>

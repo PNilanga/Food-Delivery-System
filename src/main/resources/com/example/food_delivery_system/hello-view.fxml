@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.food_delivery_system.HelloController">
+<VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="197.0" prefWidth="273.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+   <AnchorPane prefHeight="170.0" prefWidth="233.0">
+      <children>
+         <Button layoutX="80.0" layoutY="111.0" mnemonicParsing="false" onAction="#goToLoginRegister" text="Go to login">
+            <font>
+               <Font name="System Italic" size="12.0" />
+            </font>
+            <effect>
+               <InnerShadow blurType="ONE_PASS_BOX" />
+            </effect>
+         </Button>
+         <Label layoutX="9.0" layoutY="29.0" text="Food Delivery System">
+            <font>
+               <Font name="Calibri Bold" size="24.0" />
+            </font>
+            <effect>
+               <Bloom threshold="0.4" />
+            </effect>
+         </Label>
+         <Label layoutX="84.0" layoutY="69.0" text="Welcome!">
+            <font>
+               <Font name="System Bold Italic" size="14.0" />
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
 </VBox>
