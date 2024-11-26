@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.util.Date;
+import java.util.Map;
 
 public class AdminDashboardController {
     @FXML
@@ -64,8 +66,17 @@ public class AdminDashboardController {
 
     @FXML
     private void handleTrackOrders() {
-        System.out.println("Track Orders clicked.");
-        // Implement logic to track orders and delivery status
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TrackOrder.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) Stage.getWindows().filtered(Window::isShowing).get(0);
+            stage.setScene(new Scene(root));
+            stage.setTitle("Track Orders");
+        } catch (IOException e) {
+            e.printStackTrace();
+            statusLabel.setText("Error: Unable to navigate to Track Orders page.");
+        }
     }
 
     @FXML
@@ -76,8 +87,19 @@ public class AdminDashboardController {
 
     @FXML
     private void handleGenerateReports() {
-        System.out.println("Generate Reports clicked.");
-        // Implement logic to generate reports on order statistics and revenue
+        try {
+            // Load the Generate Reports Screen FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GenerateReport.fxml"));
+            Parent reportRoot = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) Stage.getWindows().filtered(Window::isShowing).get(0);
+            stage.setScene(new Scene(reportRoot));
+            stage.setTitle("Generate Reports");
+        } catch (IOException e) {
+            e.printStackTrace();
+            statusLabel.setText("Error: Unable to navigate to Generate Reports page.");
+        }
     }
 
     @FXML

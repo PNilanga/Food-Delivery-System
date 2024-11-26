@@ -9,5 +9,7 @@ module com.example.food_delivery_system {
     requires java.sql;
 
     opens com.example.food_delivery_system to javafx.fxml;
+    opens com.example.Services to javafx.base;
+
     exports com.example.food_delivery_system;
 }
