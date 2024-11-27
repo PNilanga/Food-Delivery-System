@@ -102,12 +102,12 @@ public class LoginRegisterController {
                     break;
 
                 case "customer":
-                    loader = new FXMLLoader(getClass().getResource("customer_dashboard.fxml"));
+                    loader = new FXMLLoader(getClass().getResource("customer.fxml"));
                     root = loader.load();
                     break;
 
                 case "restaurant owner":
-                    loader = new FXMLLoader(getClass().getResource("restaurant_dashboard.fxml"));
+                    loader = new FXMLLoader(getClass().getResource("RestaurantOwnerDashboard.fxml"));
                     root = loader.load();
                     break;
 

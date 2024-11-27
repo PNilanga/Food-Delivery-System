@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.food_delivery_system.RestaurantOwnerDashboardController" spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+    <Label text="Restaurant Owner Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+    <Button text="Manage Food Menu" onAction="#goToManageMenu" prefWidth="200" />
+    <Button text="Process Incoming Orders" onAction="#processIncomingOrders" prefWidth="200" />
+    <Button text="Track Order History and Revenue" onAction="#trackOrderHistory" prefWidth="200" />
+    <!--<Button text="Update Profile and Business Details" onAction="#updateProfile" prefWidth="200" />-->
+    <Button text="Log Out" onAction="#logout" prefWidth="200" />
+</VBox>

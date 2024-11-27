@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.ManageMenuController">
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Manage Menu" />
+    <TableView fx:id="menuTable">
+        <TableColumn text="Name" />
+        <TableColumn text="Price" />
+        <TableColumn text="Availability" />
+    </TableView>
+    <TextField fx:id="nameField" promptText="Name" />
+    <TextField fx:id="priceField" promptText="Price" />
+    <TextField fx:id="availabilityField" promptText="Availability (Yes/No)" />
+    <Button onAction="#addMenuItem" text="Add Item" />
+    <Button onAction="#updateMenuItem" text="Update Item" />
+    <Button onAction="#deleteMenuItem" text="Delete Item" />
+   <Button mnemonicParsing="false" onAction="#backToDashboard" text="Back" />
+</VBox>
