@@ -5,7 +5,6 @@ import com.example.Services.Util;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -58,8 +57,7 @@ public class TrackOrdersController {
                         rs.getInt("orderId"),
                         rs.getString("customerName"),
                         rs.getString("restaurant"),
-                        rs.getString("status"),
-                        rs.getString("orderDate")
+                        rs.getString("status")
                 ));
             }
         } catch (SQLException e) {

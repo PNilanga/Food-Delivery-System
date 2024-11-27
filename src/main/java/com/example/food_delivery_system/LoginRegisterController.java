@@ -107,7 +107,7 @@ public class LoginRegisterController {
                     break;
 
                 case "restaurant owner":
-                    loader = new FXMLLoader(getClass().getResource("restaurant_dashboard.fxml"));
+                    loader = new FXMLLoader(getClass().getResource("RestaurantOwnerDashboard.fxml"));
                     root = loader.load();
                     break;
 

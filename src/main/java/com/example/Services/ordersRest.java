@@ -1,17 +1,21 @@
 package com.example.Services;
 
-public class Order {
+public class ordersRest {
     private int orderId;
     private String customerName;
-    private String restaurant;
+    private double amount;
     private String status;
     private String orderDate;
 
-    public Order(int orderId, String customerName, String restaurant, String status) {
+    public ordersRest(int orderId, String customerName, double amount, String status) {
         this.orderId = orderId;
         this.customerName = customerName;
-        this.restaurant = restaurant;
+        this.amount = amount;
         this.status = status;
+    }
+
+    public ordersRest(int orderId, String customerName, double amount, String status, String orderDate) {
+        this(orderId, customerName, amount, status);
         this.orderDate = orderDate;
     }
 
@@ -23,15 +27,15 @@ public class Order {
         return customerName;
     }
 
-    public String getRestaurant() {
-        return restaurant;
+    public double getAmount() {
+        return amount;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public String getOrderDate() { // This matches the 'orderDate' property in PropertyValueFactory
+    public String getOrderDate() {
         return orderDate;
     }
 }

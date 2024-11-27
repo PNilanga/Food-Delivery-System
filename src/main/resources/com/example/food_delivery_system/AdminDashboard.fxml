@@ -29,7 +29,7 @@
         <!-- Reports Section -->
         <Label layoutX="20.0" layoutY="270.0" text="Generate Reports:" />
         <Button layoutX="177.0" layoutY="266.0" onAction="#handleGenerateReports" prefHeight="25.0" prefWidth="109.0" text="Generate Reports" />
-      <Button layoutX="347.0" layoutY="351.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="25.0" prefWidth="82.0" text="Back" />
+      <Button layoutX="347.0" layoutY="351.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="25.0" prefWidth="82.0" text="Logout" />
       <Label layoutX="22.0" layoutY="80.0" text="To Manage User:s" />
       <Label fx:id="statusLabel" layoutX="17.0" layoutY="355.0" prefHeight="17.0" prefWidth="285.0" />
     </children>

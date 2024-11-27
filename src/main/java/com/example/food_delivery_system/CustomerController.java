@@ -3,12 +3,18 @@ package com.example.food_delivery_system;
 import com.example.Services.DBConnector;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -128,5 +134,20 @@ public class CustomerController {
     @FXML
     private void handleViewOrderHistory() {
         System.out.println("Viewing order history...");
+    }
+    @FXML
+    private void goBackToLogin() {
+        try {
+            // Load the Login Screen FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("RegisterOrLogin.fxml"));
+            Parent loginRoot = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) Stage.getWindows().filtered(Window::isShowing).get(0);
+            stage.setScene(new Scene(loginRoot));
+            stage.setTitle("Register Or Login");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

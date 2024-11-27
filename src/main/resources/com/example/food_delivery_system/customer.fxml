@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <Pane prefHeight="781.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.CustomerController">
    <children>
    
@@ -41,5 +40,6 @@
           <Button layoutX="242.0" layoutY="641.0" onAction="#handleUpdateAccount" prefWidth="200" text="Update Account" />
    
           <Button layoutX="26.0" layoutY="725.0" onAction="#handleViewOrderHistory" prefWidth="200" text="View Order History" />
+      <Button layoutX="489.0" layoutY="738.0" mnemonicParsing="false" onAction="#goBackToLogin" prefHeight="25.0" prefWidth="67.0" text="Logout" />
    </children>
 </Pane>

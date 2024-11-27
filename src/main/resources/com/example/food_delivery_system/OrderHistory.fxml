@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.food_delivery_system.OrderHistoryController" spacing="10" alignment="CENTER">
+    <Label text="Order History" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    <TableView fx:id="historyTable" prefWidth="500" prefHeight="300" />
+    <Button mnemonicParsing="false" onAction="#backToDashboard" text="Back" />
+</VBox>
