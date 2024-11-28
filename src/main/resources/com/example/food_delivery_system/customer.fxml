@@ -2,44 +2,46 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<Pane prefHeight="781.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.CustomerController">
-   <children>
-   
-          <Label layoutX="207.0" layoutY="14.0" text="Customer Dashboard">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-       <ListView fx:id="foodListView" layoutX="26.0" layoutY="65.0" prefHeight="150" prefWidth="200" />
-   
-          <TextField fx:id="quantityField" layoutX="265.0" layoutY="65.0" prefWidth="200" promptText="Enter quantity" />
-   
-      
-          <Button layoutX="265.0" layoutY="190.0" onAction="#handleAddToCart" prefWidth="200" text="Add to Cart" />
-   
-      
-          <Label layoutX="26.0" layoutY="284.0" text="Enter Payment Amount" />
-       <TextField fx:id="paymentField" layoutX="271.0" layoutY="280.0" prefWidth="200" promptText="Amount" />
-   
-          <Button layoutX="271.0" layoutY="323.0" onAction="#handlePayment" prefWidth="200" text="Pay Now" />
-   
-      
-          <Label layoutX="26.0" layoutY="391.0" text="Order Status" />
-       <ListView fx:id="orderStatusListView" layoutX="26.0" layoutY="409.0" prefHeight="150" prefWidth="200" />
-   
-      
-          <Label layoutX="256.0" layoutY="391.0" text="Order Progress" />
-       <ProgressBar fx:id="orderProgress" layoutX="256.0" layoutY="425.0" prefWidth="200" />
-   
-          <Label layoutX="26.0" layoutY="618.0" text="Update Account Information" />
-       <TextField fx:id="nameField" layoutX="26.0" layoutY="641.0" prefWidth="200" promptText="Enter your name" />
-       <TextField fx:id="emailField" layoutX="26.0" layoutY="676.0" prefWidth="200" promptText="Enter your email" />
-   
-          <Button layoutX="242.0" layoutY="641.0" onAction="#handleUpdateAccount" prefWidth="200" text="Update Account" />
-   
-          <Button layoutX="26.0" layoutY="725.0" onAction="#handleViewOrderHistory" prefWidth="200" text="View Order History" />
-      <Button layoutX="489.0" layoutY="738.0" mnemonicParsing="false" onAction="#goBackToLogin" prefHeight="25.0" prefWidth="67.0" text="Logout" />
-   </children>
-</Pane>
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.food_delivery_system.CustomerDashboardController">
+    <!-- Title -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Customer Dashboard" />
+
+    <!-- Restaurant Dropdown -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Select Restaurant:" />
+        <ComboBox fx:id="restaurantDropdown" prefWidth="200" />
+    </HBox>
+
+    <!-- Food Items Table -->
+    <VBox spacing="10" alignment="CENTER">
+        <Label style="-fx-font-size: 16px;" text="Menu Items" />
+        <TableView fx:id="menuItemsTable" prefHeight="200" prefWidth="500">
+            <columns>
+                <TableColumn fx:id="menuItemIDColumn" text="Food ID" prefWidth="100" />
+                <TableColumn fx:id="nameColumn" text="Food Name" prefWidth="250" />
+                <TableColumn fx:id="priceColumn" text="Price" prefWidth="150" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Selected Items and Total -->
+    <VBox spacing="10" alignment="CENTER" style="-fx-padding: 10; -fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5;">
+        <Label style="-fx-font-size: 16px;" text="Selected Items" />
+        <ListView fx:id="selectedItemsList" prefHeight="150" prefWidth="400" />
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label style="-fx-font-size: 14px;" text="Total Amount:" />
+            <Label fx:id="totalAmountLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text=" " />
+        </HBox>
+
+        <!-- Buttons -->
+        <Button onAction="#handlePlaceOrder" text="Place Order" style="-fx-font-size: 14px;" />
+    </VBox>
+
+    <!-- Status Label -->
+    <Label fx:id="statusLabel" style="-fx-text-fill: red;" text="" />
+
+    <!-- Back to Login Button -->
+    <Button onAction="#logout" text="Back to Login" style="-fx-font-size: 14px;" />
+</VBox>
